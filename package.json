@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "main": "lib/index.js",
   "author": "xiaolanchong <1006903445@qq.com>",
-  "description": "",
+  "description": "中传数据大屏",
   "repository": {
     "type": "git",
-    "url": "https://github.com/xwxlc/zc-data-view.git"
+    "url": "git+https://github.com/xwxlc/zc-data-view.git"
   },
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -34,5 +34,12 @@
     "less": "^3.0.4",
     "less-loader": "^5.0.0",
     "vue-template-compiler": "^2.6.11"
+  },
+  "bugs": {
+    "url": "https://github.com/xwxlc/zc-data-view/issues"
+  },
+  "homepage": "https://github.com/xwxlc/zc-data-view#readme",
+  "directories": {
+    "lib": "lib"
   }
 }
