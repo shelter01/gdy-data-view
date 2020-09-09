@@ -6,7 +6,7 @@
 
 <script>
 import Vue from 'vue';
-import dataView from '@/../lib/index';
+import dataView from 'zc-data-view';
 Vue.use(dataView);
 export default {
   name: 'App',

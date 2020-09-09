@@ -8541,3 +8541,12 @@ yorkie@^2.0.0:
     is-ci "^1.0.10"
     normalize-path "^1.0.0"
     strip-indent "^2.0.0"
+
+zc-data-view@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/zc-data-view/-/zc-data-view-0.1.0.tgz#93d2d2301a2d0467da736bac55eb2a1e2be19417"
+  integrity sha512-zKesS0mfqx52ZZY/IZyKR+GGJegzz63ufrfUq+W8AiaY6u1ISao+ZLst2pEoQCK0mdAd8fAbbpQuJ4A/5Vl5vg==
+  dependencies:
+    "@jiaminghi/data-view" "^2.9.9"
+    core-js "^3.6.5"
+    vue "^2.6.11"

@@ -18,7 +18,7 @@ npm install zc-data-view
 yarn add zc-data-view
 ```
 
-## 使用
+## 引入
 
 ```javascript
 // 将自动注册所有组件为全局组件
@@ -33,3 +33,43 @@ Vue.use(dataView);
 import { chartNode } from 'zc-data-view';
 Vue.use(chartNode);
 ```
+
+## 使用
+
+```html
+<zc-chart-node :title="title" :inData="inData" :outData="outData" :lcpsInfo="lcpsInfo" />
+```
+
+### title 属性
+
+类型`String`
+
+| 属性 |    说明    |   类型   | 可选值 |    默认值    |
+| :--: | :--------: | :------: | :----: | :----------: |
+| name | 左上角名称 | `String` |  ---   | `全链路监看` |
+
+### inData 属性
+
+类型`Array`
+
+|  属性   |   说明   |    类型    | 可选值 | 默认值 |
+| :-----: | :------: | :--------: | :----: | :----: |
+|  name   | 信源名称 |  `String`  |  ---   | `信源` |
+| fluency |  流畅度  | `Number[]` |  ---   |  `-`   |
+
+### outData 属性
+
+类型`Array`
+
+|  属性   |   说明   |    类型    | 可选值 | 默认值 |
+| :-----: | :------: | :--------: | :----: | :----: |
+|  name   | 输出名称 |  `String`  |  ---   | `输出` |
+| fluency |  流畅度  | `Number[]` |  ---   |  `-`   |
+
+### lcpsInfo 属性
+
+类型`Object`
+
+| 属性  |    说明    |   类型   | 可选值 | 默认值 |
+| :---: | :--------: | :------: | :----: | :----: |
+| title | 点播台名称 | `String` |  ---   | `lcps` |
