@@ -1,6 +1,6 @@
 {
   "name": "zc-data-view",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "lib/index.js",
   "author": "xiaolanchong <1006903445@qq.com>",
   "description": "中传数据大屏",
