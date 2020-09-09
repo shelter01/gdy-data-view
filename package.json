@@ -1,5 +1,5 @@
 {
-  "name": "@zc/data-view",
+  "name": "zc-data-view",
   "version": "0.1.0",
   "main": "lib/index.js",
   "author": "xiaolanchong <1006903445@qq.com>",

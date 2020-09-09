@@ -1,4 +1,4 @@
-# @zc/data-view
+# zc-data-view
 
 中传数据大屏
 
@@ -9,20 +9,20 @@
 - npm 安装
 
 ```bash
-npm install @zc/data-view
+npm install zc-data-view
 ```
 
 - yarn 安装
 
 ```
-yarn add @zc/data-view
+yarn add zc-data-view
 ```
 
 ## 使用
 
 ```javascript
 // 将自动注册所有组件为全局组件
-import dataView from '@zc/data-view';
+import dataView from 'zc-data-view';
 Vue.use(dataView);
 ```
 
@@ -30,6 +30,6 @@ Vue.use(dataView);
 
 ```javascript
 // 将自动注册所有组件为全局组件
-import { chartNode } from '@zc/data-view';
+import { chartNode } from 'zc-data-view';
 Vue.use(chartNode);
 ```
