@@ -35,7 +35,7 @@ Vue.use(fullScreenContainer);
 Vue.use(flylineChartEnhanced);
 import CHART_CONFIG from './config.js';
 export default {
-  name: 'zc-chart-node',
+  name: 'chartNode',
   props: {
     title: {
       type: String,

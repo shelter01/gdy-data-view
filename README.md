@@ -30,6 +30,6 @@ Vue.use(dataView);
 
 ```javascript
 // 将自动注册所有组件为全局组件
-import { zcChartNode } from '@zc/data-view';
-Vue.use(zcChartNode);
+import { chartNode } from '@zc/data-view';
+Vue.use(chartNode);
 ```
