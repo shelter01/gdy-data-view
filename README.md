@@ -1,24 +1,35 @@
-# zc
+# @zc/data-view
 
-## Project setup
-```
-yarn install
-```
+中传数据大屏
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+- [x] 全链路监看
 
-### Compiles and minifies for production
-```
-yarn build
+## 安装
+
+- npm 安装
+
+```bash
+npm install @zc/data-view
 ```
 
-### Lints and fixes files
+- yarn 安装
+
 ```
-yarn lint
+yarn add @zc/data-view
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## 使用
+
+```javascript
+// 将自动注册所有组件为全局组件
+import dataView from '@zc/data-view';
+Vue.use(dataView);
+```
+
+## 按需引入
+
+```javascript
+// 将自动注册所有组件为全局组件
+import { zcChartNode } from '@zc/data-view';
+Vue.use(zcChartNode);
+```
