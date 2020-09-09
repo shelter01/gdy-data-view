@@ -1,15 +1,25 @@
 {
   "name": "@zc/data-view",
   "version": "0.1.0",
-  "private": true,
+  "main": "lib/index.js",
+  "author": "xiaolanchong <1006903445@qq.com>",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xwxlc/zc-data-view.git"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
+  "license": "MIT",
+  "keywords": [
+    "vue",
+    "chart",
+    "DataV"
+  ],
   "dependencies": {
-    "@antv/g2": "^4.0.15",
-    "@antv/g6": "^3.7.1",
     "@jiaminghi/data-view": "^2.9.9",
     "core-js": "^3.6.5",
     "vue": "^2.6.11"

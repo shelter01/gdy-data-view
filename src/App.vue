@@ -1,16 +1,17 @@
 <template>
   <div id="app">
-    <chart-node />
+    <zc-chart-node />
   </div>
 </template>
 
 <script>
-import chartNode from '@/components/chart-node/index.vue';
-
+import Vue from 'vue';
+import dataView from '@/../lib/index';
+Vue.use(dataView);
 export default {
   name: 'App',
-  components: {
-    chartNode
+  mounted() {
+    console.log(this);
   }
 };
 </script>
