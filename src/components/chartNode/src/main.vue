@@ -120,7 +120,7 @@ export default {
         let item = this.outData[i];
         let len = this.outData.length;
         let startY = 0.55 + (0.1 / len) * (i - (len - 1) / 2);
-        let endY = 0.55 + (0.7 / len) * (i - (len - 1) / 2);
+        let endY = 0.55 + (0.8 / len) * (i - (len - 1) / 2);
         let pointsFluency = CHART_CONFIG.pointsEndFluency(len);
         let pointsEndFluency = CHART_CONFIG.pointsOutFluency(len);
         let linesFluency = CHART_CONFIG.linesFluency;

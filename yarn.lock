@@ -881,10 +881,11 @@
     to-fast-properties "^2.0.0"
 
 "@gdyfe/data-view@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@gdyfe/data-view/-/data-view-1.0.0.tgz#9bc0b4a5916858cf1251132f2b8f4cc8a164d9dd"
-  integrity sha512-ESZhStEMi7fqaWGYpMt+C8zZFrmkh/vgiOMkvdI7NcbH/ijk7d4PbBj6Gj5hy1xzo8SpCi2DTJC2aDip0wt5dw==
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@gdyfe/data-view/-/data-view-1.0.1.tgz#884f41d89f12fcb4a617edfbfdd0f829444feb4c"
+  integrity sha512-J8kL6m1Ltj2aHo8SVP3R04jiPCeJt80jKYpvI8vySYCaLI+GMahG0B2K0Lq2pGeP3I6954z+DCsvKukYSamS8A==
   dependencies:
+    "@gdyfe/data-view" "^1.0.0"
     "@jiaminghi/data-view" "^2.9.9"
     core-js "^3.6.5"
     vue "^2.6.11"

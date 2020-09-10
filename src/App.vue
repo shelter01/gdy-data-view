@@ -16,8 +16,8 @@
 
 <script>
 import Vue from 'vue';
-import dataView from './components/chartNode';
-// import dataView from '@gdyfe/data-view';
+// import dataView from './components/chartNode';
+import dataView from '@gdyfe/data-view';
 Vue.use(dataView);
 export default {
   name: 'App',
