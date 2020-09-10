@@ -1,24 +1,24 @@
 <template>
   <dv-full-screen-container style="background: #1b1c20;">
-    <div class="zc-chart-node">
-      <div class="zc-chart-node--title">{{ title }}</div>
-      <div class="zc-chart-node--tr">
-        <div class="zc-chart-node--th">采集视频源</div>
-        <div class="zc-chart-node--th">集群导播台</div>
-        <div class="zc-chart-node--th">视频输出</div>
+    <div class="gdy-chart-node">
+      <div class="gdy-chart-node--title">{{ title }}</div>
+      <div class="gdy-chart-node--tr">
+        <div class="gdy-chart-node--th">采集视频源</div>
+        <div class="gdy-chart-node--th">集群导播台</div>
+        <div class="gdy-chart-node--th">视频输出</div>
       </div>
-      <div class="zc-chart-node--base">
-        <img class="zc-chart-node--base-img" src="./img/base.png" alt="" />
-        <div class="zc-chart-node--base-in">in</div>
-        <div class="zc-chart-node--base-name">{{ lcpsInfo.title }}</div>
-        <div class="zc-chart-node--base-out">out</div>
+      <div class="gdy-chart-node--base">
+        <img class="gdy-chart-node--base-img" src="./img/base.png" alt="" />
+        <div class="gdy-chart-node--base-in">in</div>
+        <div class="gdy-chart-node--base-name">{{ lcpsInfo.title }}</div>
+        <div class="gdy-chart-node--base-out">out</div>
       </div>
-      <div class="zc-chart-node--count">
-        <div class="zc-chart-node--count-inline">
+      <div class="gdy-chart-node--count">
+        <div class="gdy-chart-node--count-inline">
           全部节点数
           <span>{{ countNode }}</span>
         </div>
-        <div class="zc-chart-node--count-inline">
+        <div class="gdy-chart-node--count-inline">
           当前异常节点数
           <span>{{ errorNode }}</span>
         </div>
@@ -35,7 +35,7 @@ Vue.use(fullScreenContainer);
 Vue.use(flylineChartEnhanced);
 import CHART_CONFIG from './config.js';
 export default {
-  name: 'zcChartNode',
+  name: 'gdyChartNode',
   props: {
     title: {
       type: String,

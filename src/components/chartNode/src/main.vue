@@ -1,24 +1,24 @@
 <template>
   <dv-full-screen-container style="background: #1b1c20;">
-    <div class="zc-chart-node">
-      <div class="zc-chart-node--title">{{ title }}</div>
-      <div class="zc-chart-node--tr">
-        <div class="zc-chart-node--th">采集视频源</div>
-        <div class="zc-chart-node--th">集群导播台</div>
-        <div class="zc-chart-node--th">视频输出</div>
+    <div class="gdy-chart-node">
+      <div class="gdy-chart-node--title">{{ title }}</div>
+      <div class="gdy-chart-node--tr">
+        <div class="gdy-chart-node--th">采集视频源</div>
+        <div class="gdy-chart-node--th">集群导播台</div>
+        <div class="gdy-chart-node--th">视频输出</div>
       </div>
-      <div class="zc-chart-node--base">
-        <img class="zc-chart-node--base-img" src="./img/base.png" alt="" />
-        <div class="zc-chart-node--base-in">in</div>
-        <div class="zc-chart-node--base-name">{{ lcpsInfo.title }}</div>
-        <div class="zc-chart-node--base-out">out</div>
+      <div class="gdy-chart-node--base">
+        <img class="gdy-chart-node--base-img" src="./img/base.png" alt="" />
+        <div class="gdy-chart-node--base-in">in</div>
+        <div class="gdy-chart-node--base-name">{{ lcpsInfo.title }}</div>
+        <div class="gdy-chart-node--base-out">out</div>
       </div>
-      <div class="zc-chart-node--count">
-        <div class="zc-chart-node--count-inline">
+      <div class="gdy-chart-node--count">
+        <div class="gdy-chart-node--count-inline">
           全部节点数
           <span>{{ countNode }}</span>
         </div>
-        <div class="zc-chart-node--count-inline">
+        <div class="gdy-chart-node--count-inline">
           当前异常节点数
           <span>{{ errorNode }}</span>
         </div>
@@ -35,7 +35,7 @@ Vue.use(fullScreenContainer);
 Vue.use(flylineChartEnhanced);
 import CHART_CONFIG from './config.js';
 export default {
-  name: 'chartNode',
+  name: 'gdyChartNode',
   props: {
     title: {
       type: String,
@@ -144,7 +144,7 @@ export default {
           }
         );
         lines.push({
-          source: item.name || `输出${i + 1}` + '-start',
+          source: (item.name || `输出${i + 1}`) + '-start',
           target: item.name || `输出${i + 1}`,
           ...linesFluency
         });
@@ -168,109 +168,3 @@ export default {
   }
 };
 </script>
-<style lang="less" scoped>
-.dv-flyline-chart-enhanced {
-  position: relative;
-  z-index: 100;
-}
-.zc-chart-node {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  height: 100%;
-  width: 100%;
-}
-.zc-chart-node--title {
-  padding: 15px 20px;
-  font-size: 24px;
-  color: #fff;
-}
-.zc-chart-node--tr {
-  width: 100%;
-  padding: 20px 0;
-  display: flex;
-  color: #2ec2b8;
-  font-size: 20px;
-  .zc-chart-node--th:nth-child(1) {
-    margin-left: 15%;
-    flex: 0 0 auto;
-    width: 10%;
-    text-align: center;
-  }
-  .zc-chart-node--th:nth-child(3) {
-    margin-right: 15%;
-    flex: 0 0 auto;
-    width: 10%;
-    text-align: center;
-  }
-  .zc-chart-node--th:nth-child(2) {
-    flex: 1;
-    color: #2ec2b8;
-    text-align: center;
-  }
-}
-.zc-chart-node--base {
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 55%;
-  color: #fff;
-  .zc-chart-node--base-img {
-    width: 100%;
-    // animation: animateY 5s ease-in-out infinite;
-  }
-  .zc-chart-node--base-name {
-    position: absolute;
-    top: 50px;
-    width: 100%;
-    text-align: center;
-    font-size: 43px;
-  }
-  .zc-chart-node--base-in {
-    position: absolute;
-    top: 150px;
-    left: 255px;
-    font-size: 26px;
-  }
-  .zc-chart-node--base-out {
-    position: absolute;
-    top: 150px;
-    right: 250px;
-    font-size: 26px;
-    font-size: 26px;
-  }
-}
-.zc-chart-node--count {
-  position: absolute;
-  bottom: 60px;
-  left: 50%;
-  transform: translate(-50%, 0);
-  text-align: center;
-  line-height: 30px;
-  .zc-chart-node--count-inline {
-    margin: 0 45px;
-    display: inline-block;
-    font-size: 20px;
-    color: #fff;
-    span {
-      margin: 0 6px;
-      vertical-align: top;
-      font-size: 40px;
-      color: #2ec2b8;
-    }
-  }
-}
-@keyframes animateY {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(20px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-</style>

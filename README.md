@@ -1,4 +1,4 @@
-# zc-data-view
+# @gdyfe/data-view
 
 中传数据大屏
 
@@ -9,20 +9,20 @@
 - npm 安装
 
 ```bash
-npm install zc-data-view
+npm install @gdyfe/data-view
 ```
 
 - yarn 安装
 
 ```
-yarn add zc-data-view
+yarn add @gdyfe/data-view
 ```
 
 ## 引入
 
 ```javascript
 // 将自动注册所有组件为全局组件
-import dataView from 'zc-data-view';
+import dataView from '@gdyfe/data-view';
 Vue.use(dataView);
 ```
 
@@ -30,14 +30,14 @@ Vue.use(dataView);
 
 ```javascript
 // 将自动注册所有组件为全局组件
-import { chartNode } from 'zc-data-view';
+import { chartNode } from '@gdyfe/data-view';
 Vue.use(chartNode);
 ```
 
 ## 使用
 
 ```html
-<zc-chart-node :title="title" :inData="inData" :outData="outData" :lcpsInfo="lcpsInfo" />
+<gdy-chart-node :title="title" :inData="inData" :outData="outData" :lcpsInfo="lcpsInfo" />
 ```
 
 ### title 属性

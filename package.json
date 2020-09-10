@@ -1,12 +1,12 @@
 {
-  "name": "zc-data-view",
-  "version": "0.1.3",
+  "name": "@gdyfe/data-view",
+  "version": "1.0.0",
   "main": "lib/index.js",
   "author": "xiaolanchong <1006903445@qq.com>",
   "description": "中传数据大屏",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xwxlc/zc-data-view.git"
+    "url": "git+https://github.com/xwxlc/gdy-data-view.git"
   },
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -22,8 +22,7 @@
   "dependencies": {
     "@jiaminghi/data-view": "^2.9.9",
     "core-js": "^3.6.5",
-    "vue": "^2.6.11",
-    "zc-data-view": "^0.1.0"
+    "vue": "^2.6.11"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -37,9 +36,9 @@
     "vue-template-compiler": "^2.6.11"
   },
   "bugs": {
-    "url": "https://github.com/xwxlc/zc-data-view/issues"
+    "url": "https://github.com/xwxlc/gdy-data-view/issues"
   },
-  "homepage": "https://github.com/xwxlc/zc-data-view#readme",
+  "homepage": "https://github.com/xwxlc/gdy-data-view#readme",
   "directories": {
     "lib": "lib"
   }
