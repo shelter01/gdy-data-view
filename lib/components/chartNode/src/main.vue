@@ -144,7 +144,7 @@ export default {
           }
         );
         lines.push({
-          source: item.name || `输出${i + 1}` + '-start',
+          source: (item.name || `输出${i + 1}`) + '-start',
           target: item.name || `输出${i + 1}`,
           ...linesFluency
         });

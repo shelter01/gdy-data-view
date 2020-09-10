@@ -20,6 +20,7 @@
     "DataV"
   ],
   "dependencies": {
+    "@gdyfe/data-view": "^1.0.0",
     "@jiaminghi/data-view": "^2.9.9",
     "core-js": "^3.6.5",
     "vue": "^2.6.11"

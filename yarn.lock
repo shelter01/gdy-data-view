@@ -880,6 +880,15 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
+"@gdyfe/data-view@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@gdyfe/data-view/-/data-view-1.0.0.tgz#9bc0b4a5916858cf1251132f2b8f4cc8a164d9dd"
+  integrity sha512-ESZhStEMi7fqaWGYpMt+C8zZFrmkh/vgiOMkvdI7NcbH/ijk7d4PbBj6Gj5hy1xzo8SpCi2DTJC2aDip0wt5dw==
+  dependencies:
+    "@jiaminghi/data-view" "^2.9.9"
+    core-js "^3.6.5"
+    vue "^2.6.11"
+
 "@hapi/address@2.x.x":
   version "2.1.4"
   resolved "https://registry.npm.taobao.org/@hapi/address/download/@hapi/address-2.1.4.tgz?cache=0&sync_timestamp=1593993836406&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40hapi%2Faddress%2Fdownload%2F%40hapi%2Faddress-2.1.4.tgz#5d67ed43f3fd41a69d4b9ff7b56e7c0d1d0a81e5"
@@ -8541,12 +8550,3 @@ yorkie@^2.0.0:
     is-ci "^1.0.10"
     normalize-path "^1.0.0"
     strip-indent "^2.0.0"
-
-zc-data-view@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/zc-data-view/-/zc-data-view-0.1.0.tgz#93d2d2301a2d0467da736bac55eb2a1e2be19417"
-  integrity sha512-zKesS0mfqx52ZZY/IZyKR+GGJegzz63ufrfUq+W8AiaY6u1ISao+ZLst2pEoQCK0mdAd8fAbbpQuJ4A/5Vl5vg==
-  dependencies:
-    "@jiaminghi/data-view" "^2.9.9"
-    core-js "^3.6.5"
-    vue "^2.6.11"
