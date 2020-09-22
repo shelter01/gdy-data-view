@@ -1,28 +1,36 @@
 <template>
   <div id="app">
-    <gdy-chart-node :inData="inData" :outData="outData" />
+    <gdy-chart-node
+      :inData="inData"
+      :outData="outData"
+      :countNode="countNode"
+      :errorNode="errorNode"
+    />
     <div class="fixed">
-      <div>
+      <!-- <div>
         inData
         <input type="text" v-model="inDataLen" />
       </div>
       <div>
         outData
         <input type="text" v-model="outDataLen" />
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
 
 <script>
 import Vue from 'vue';
-// import dataView from './components/chartNode';
+// import dataView from '@/components/chartNode';
+// import dataView from '@/../lib/index.js';
 import dataView from '@gdyfe/data-view';
 Vue.use(dataView);
 export default {
   name: 'App',
   data() {
     return {
+      countNode: 8,
+      errorNode: 0,
       inDataLen: 4,
       outDataLen: 4
     };
@@ -33,7 +41,7 @@ export default {
       for (let i = 0; i < this.inDataLen; i++) {
         list.push({
           name: `信源${i + 1}`,
-          fluency: Math.fround(50) + 50
+          fluency: Math.random() * 20 + 80
         });
       }
       return list;
@@ -43,7 +51,7 @@ export default {
       for (let i = 0; i < this.outDataLen; i++) {
         list.push({
           name: `输出${i + 1}`,
-          fluency: Math.fround(50) + 50
+          fluency: Math.random() * 20 + 80
         });
       }
       return list;

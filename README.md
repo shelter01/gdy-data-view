@@ -37,20 +37,35 @@ Vue.use(chartNode);
 ## 使用
 
 ```html
-<gdy-chart-node :title="title" :inData="inData" :outData="outData" :lcpsInfo="lcpsInfo" />
+<gdy-chart-node
+  :title="title"
+  :lcpsInfo="lcpsInfo"
+  :inData="inData"
+  :outData="outData"
+  :countNode="countNode"
+  :errorNode="errorNode"
+/>
 ```
 
 ### title 属性
 
-类型`String`
+类型`String` 右上角大屏名称
 
-| 属性 |    说明    |   类型   | 可选值 |    默认值    |
-| :--: | :--------: | :------: | :----: | :----------: |
-| name | 左上角名称 | `String` |  ---   | `全链路监看` |
+| 属性  |    说明    |   类型   | 可选值 |    默认值    |
+| :---: | :--------: | :------: | :----: | :----------: |
+| title | 左上角名称 | `String` |  ---   | `全链路监看` |
+
+### lcpsInfo 属性
+
+类型`Object` 导播台参数 名称
+
+| 属性 | 说明 |   类型   | 可选值 | 默认值 |
+| :--: | :--: | :------: | :----: | :----: |
+| name | 名称 | `String` |  ---   | `lcps` |
 
 ### inData 属性
 
-类型`Array`
+类型`Array` 输入列表
 
 |  属性   |  说明  |   类型   | 可选值 | 默认值 |
 | :-----: | :----: | :------: | :----: | :----: |
@@ -59,17 +74,25 @@ Vue.use(chartNode);
 
 ### outData 属性
 
-类型`Array`
+类型`Array` 输出列表
 
 |  属性   |  说明  |   类型   | 可选值 | 默认值 |
 | :-----: | :----: | :------: | :----: | :----: |
 |  name   |  名称  | `String` |  ---   | `输出` |
 | fluency | 流畅度 | `Number` |  ---   |  `-`   |
 
-### lcpsInfo 属性
+### countNode 属性
 
-类型`Object`
+类型`Number` 总节点数
 
-| 属性  | 说明 |   类型   | 可选值 | 默认值 |
-| :---: | :--: | :------: | :----: | :----: |
-| title | 名称 | `String` |  ---   | `lcps` |
+|   属性    |   说明   |   类型   | 可选值 | 默认值 |
+| :-------: | :------: | :------: | :----: | :----: |
+| countNode | 总节点数 | `Number` |  ---   |  `0`   |
+
+### errorNode 属性
+
+类型`Number` 异常节点数
+
+|   属性    |    说明    |   类型   | 可选值 | 默认值 |
+| :-------: | :--------: | :------: | :----: | :----: |
+| errorNode | 异常节点数 | `Number` |  ---   |  `0`   |

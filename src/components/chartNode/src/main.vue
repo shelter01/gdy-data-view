@@ -10,7 +10,7 @@
       <div class="gdy-chart-node--base">
         <img class="gdy-chart-node--base-img" src="./img/base.png" alt="" />
         <div class="gdy-chart-node--base-in">in</div>
-        <div class="gdy-chart-node--base-name">{{ lcpsInfo.title }}</div>
+        <div class="gdy-chart-node--base-name">{{ lcpsInfo.name }}</div>
         <div class="gdy-chart-node--base-out">out</div>
       </div>
       <div class="gdy-chart-node--count">
@@ -59,15 +59,25 @@ export default {
       type: Object,
       default() {
         return {
-          title: 'lcps'
+          name: 'lcps'
         };
+      }
+    },
+    countNode: {
+      type: Number,
+      default() {
+        return 0;
+      }
+    },
+    errorNode: {
+      type: Number,
+      default() {
+        return 0;
       }
     }
   },
   data() {
     return {
-      countNode: 0,
-      errorNode: 0,
       config: {
         points: [],
         lines: []
@@ -81,8 +91,6 @@ export default {
     resetConfig() {
       let points = [];
       let lines = [];
-      let countNode = 0;
-      let errorNode = 0;
       for (let i = 0; i < this.inData.length; i++) {
         let item = this.inData[i];
         let len = this.inData.length;
@@ -91,12 +99,10 @@ export default {
         let pointsFluency = CHART_CONFIG.pointsInFluency(len);
         let pointsEndFluency = CHART_CONFIG.pointsEndFluency(len);
         let linesFluency = CHART_CONFIG.linesFluency;
-        countNode++;
-        if (!item.fluency || item.fluency < 90) {
+        if (!item.fluency || item.fluency <= 85) {
           pointsFluency = CHART_CONFIG.pointsInDisfluency(len);
           pointsEndFluency = CHART_CONFIG.pointsEndDisfluency(len);
           linesFluency = CHART_CONFIG.linesDisfluency;
-          errorNode++;
         }
         points.push(
           {
@@ -124,12 +130,10 @@ export default {
         let pointsFluency = CHART_CONFIG.pointsEndFluency(len);
         let pointsEndFluency = CHART_CONFIG.pointsOutFluency(len);
         let linesFluency = CHART_CONFIG.linesFluency;
-        countNode++;
-        if (!item.fluency || item.fluency < 90) {
+        if (!item.fluency || item.fluency <= 85) {
           pointsFluency = CHART_CONFIG.pointsEndDisfluency(len);
           pointsEndFluency = CHART_CONFIG.pointsOutDisfluency(len);
           linesFluency = CHART_CONFIG.linesDisfluency;
-          errorNode++;
         }
         points.push(
           {
@@ -150,8 +154,6 @@ export default {
         });
       }
       this.config = { points, lines };
-      this.countNode = countNode;
-      this.errorNode = errorNode;
     }
   },
   watch: {
