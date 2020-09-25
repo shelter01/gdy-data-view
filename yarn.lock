@@ -862,9 +862,9 @@
     to-fast-properties "^2.0.0"
 
 "@gdyfe/data-view@^1.0.0":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@gdyfe/data-view/-/data-view-1.0.4.tgz#dc0895fd942a647c74578349482fde8e48b26589"
-  integrity sha512-qyj0pNaa2S4lCJhD1wYRqMjmPQK3ZMIFII6q3Yr7If6E2EDnwLq6ouOIxbnqmXhkKJdQoBXSXnoqYvCwK4mQmA==
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@gdyfe/data-view/-/data-view-1.0.5.tgz#289a1b03e6be410abf537b1ae97b0e6da3f056a3"
+  integrity sha512-8mATsnqB9x1RvZgldCVL7oFFFALcG21WxXWFlR/00iClAP4cr379vy/0KXDWqqQcqIafBdtqBv2fWaiMYPa9/g==
   dependencies:
     "@gdyfe/data-view" "^1.0.0"
     "@jiaminghi/data-view" "^2.9.9"

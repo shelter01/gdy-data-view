@@ -106,19 +106,19 @@ export default {
         }
         points.push(
           {
-            name: item.name || `信源${i + 1}`,
+            name: `${i + 1}、${item.name || '信源' + i + 1}`,
             coordinate: [0.2, startY],
             ...pointsFluency
           },
           {
-            name: (item.name || `信源${i + 1}`) + '-end',
+            name: `${i + 1}、${item.name || '信源' + i + 1}-end`,
             coordinate: [0.35, endY],
             ...pointsEndFluency
           }
         );
         lines.push({
-          source: item.name || `信源${i + 1}`,
-          target: (item.name || `信源${i + 1}`) + '-end',
+          source: `${i + 1}、${item.name || '信源' + i + 1}`,
+          target: `${i + 1}、${item.name || '信源' + i + 1}-end`,
           ...linesFluency
         });
       }
@@ -137,19 +137,19 @@ export default {
         }
         points.push(
           {
-            name: (item.name || `输出${i + 1}`) + '-start',
+            name: `${i + 1}、${item.name || '输出' + i + 1}-start`,
             coordinate: [0.65, startY],
             ...pointsFluency
           },
           {
-            name: item.name || `输出${i + 1}`,
+            name: `${i + 1}、${item.name || '输出' + i + 1}`,
             coordinate: [0.8, endY],
             ...pointsEndFluency
           }
         );
         lines.push({
-          source: (item.name || `输出${i + 1}`) + '-start',
-          target: item.name || `输出${i + 1}`,
+          source: `${i + 1}、${item.name || '输出' + i + 1}-start`,
+          target: `${i + 1}、${item.name || '输出' + i + 1}`,
           ...linesFluency
         });
       }
