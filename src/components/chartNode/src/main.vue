@@ -10,7 +10,7 @@
       <div class="gdy-chart-node--base">
         <img class="gdy-chart-node--base-img" src="./img/base.png" alt="" />
         <div class="gdy-chart-node--base-in">in</div>
-        <div class="gdy-chart-node--base-name">{{ lcpsInfo.name }}</div>
+        <div class="gdy-chart-node--base-name">{{ lcpsInfo.name || 'lcps' }}</div>
         <div class="gdy-chart-node--base-out">out</div>
       </div>
       <div class="gdy-chart-node--count">
@@ -170,3 +170,6 @@ export default {
   }
 };
 </script>
+<style>
+@import url(./main.css);
+</style>

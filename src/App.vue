@@ -1,27 +1,12 @@
 <template>
   <div id="app">
-    <gdy-chart-node
-      :inData="inData"
-      :outData="outData"
-      :countNode="countNode"
-      :errorNode="errorNode"
-    />
-    <div class="fixed">
-      <!-- <div>
-        inData
-        <input type="text" v-model="inDataLen" />
-      </div>
-      <div>
-        outData
-        <input type="text" v-model="outDataLen" />
-      </div> -->
-    </div>
+    <gdy-route-monitor :sub_key="sub_key" :url_list="url_list" :url_route="url_route" />
   </div>
 </template>
 
 <script>
 import Vue from 'vue';
-// import dataView from '@/components/chartNode';
+// import dataView from '@/components/index.js';
 // import dataView from '@/../lib/index.js';
 import dataView from '@gdyfe/data-view';
 Vue.use(dataView);
@@ -29,33 +14,10 @@ export default {
   name: 'App',
   data() {
     return {
-      countNode: 8,
-      errorNode: 0,
-      inDataLen: 4,
-      outDataLen: 4
+      sub_key: 'sub_0eb0a1a4b9a8cd57609dc641eee8e8c4',
+      url_list: '//ops.aodianyun.cn/admin/dbMonitor/getCenterMediaMonitor',
+      url_route: '//ops.aodianyun.cn/admin/dbMonitor/getInstanceMonitor'
     };
-  },
-  computed: {
-    inData() {
-      let list = [];
-      for (let i = 0; i < this.inDataLen; i++) {
-        list.push({
-          name: `信源${i + 1}`,
-          fluency: Math.random() * 20 + 80
-        });
-      }
-      return list;
-    },
-    outData() {
-      let list = [];
-      for (let i = 0; i < this.outDataLen; i++) {
-        list.push({
-          name: `输出${i + 1}`,
-          fluency: Math.random() * 20 + 80
-        });
-      }
-      return list;
-    }
   },
   mounted() {}
 };
@@ -66,12 +28,5 @@ html,
 body {
   padding: 0;
   margin: 0;
-}
-.fixed {
-  position: fixed;
-  top: 100px;
-  left: 100px;
-  z-index: 1000;
-  color: #fff;
 }
 </style>

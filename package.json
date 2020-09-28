@@ -1,6 +1,6 @@
 {
   "name": "@gdyfe/data-view",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "main": "lib/index.js",
   "author": "xiaolanchong <1006903445@qq.com>",
   "description": "中传数据大屏",
@@ -22,8 +22,13 @@
   "dependencies": {
     "@gdyfe/data-view": "^1.0.0",
     "@jiaminghi/data-view": "^2.9.9",
+    "@whzcorcd/rop-client": "^1.1.6",
+    "axios": "^0.20.0",
     "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+    "screenfull": "^5.0.2",
+    "swiper": "^6.3.1",
+    "vue": "^2.6.11",
+    "vue-awesome-swiper": "^4.1.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

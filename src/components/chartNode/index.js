@@ -1,4 +1,3 @@
-import './src/main.css';
 import chartNode from './src/main.vue';
 
 export default function(Vue) {
