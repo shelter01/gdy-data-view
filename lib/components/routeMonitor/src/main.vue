@@ -20,7 +20,7 @@ import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
 import 'swiper/swiper-bundle.css';
 import Swiper2, { Navigation, Pagination } from 'swiper';
 Swiper2.use([Navigation, Pagination]);
-import routeMonitorItem from '@/components/routeMonitorItem';
+import routeMonitorItem from '../../routeMonitorItem';
 Vue.use(routeMonitorItem);
 import ROP from '@whzcorcd/rop-client';
 

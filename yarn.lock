@@ -876,6 +876,21 @@
     vue "^2.6.11"
     vue-awesome-swiper "^4.1.1"
 
+"@gdyfe/data-view@^1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@gdyfe/data-view/-/data-view-1.0.8.tgz#7e7ae6b50f8d12a29a01ff5f1d57ce91e588ea47"
+  integrity sha512-IMIheZMfVoHrVABVUgkpByBh7b4UITqvAh8PujCcjJoxqjNfVenjG9bibN+/fm9r21PREdJtZBeSAUhMNh73vQ==
+  dependencies:
+    "@gdyfe/data-view" "^1.0.0"
+    "@jiaminghi/data-view" "^2.9.9"
+    "@whzcorcd/rop-client" "^1.1.6"
+    axios "^0.20.0"
+    core-js "^3.6.5"
+    screenfull "^5.0.2"
+    swiper "^6.3.1"
+    vue "^2.6.11"
+    vue-awesome-swiper "^4.1.1"
+
 "@hapi/address@2.x.x":
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/@hapi/address/-/address-2.1.4.tgz#5d67ed43f3fd41a69d4b9ff7b56e7c0d1d0a81e5"

@@ -12,7 +12,7 @@
 <script>
 import Axios from 'axios';
 import Vue from 'vue';
-import chartNode from '@/components/chartNode';
+import chartNode from '../../chartNode';
 Vue.use(chartNode);
 
 export default {

@@ -6,10 +6,9 @@
 
 <script>
 import Vue from 'vue';
-// import dataView from '@/components/index.js';
-// import dataView from '@/../lib/index.js';
-import dataView from '@gdyfe/data-view';
-Vue.use(dataView);
+// import { routeMonitor } from '@/../lib/index.js';
+import { routeMonitor } from '@gdyfe/data-view';
+Vue.use(routeMonitor);
 export default {
   name: 'App',
   data() {

@@ -1,6 +1,6 @@
 {
   "name": "@gdyfe/data-view",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "main": "lib/index.js",
   "author": "xiaolanchong <1006903445@qq.com>",
   "description": "中传数据大屏",
@@ -20,7 +20,7 @@
     "DataV"
   ],
   "dependencies": {
-    "@gdyfe/data-view": "^1.0.0",
+    "@gdyfe/data-view": "^1.0.8",
     "@jiaminghi/data-view": "^2.9.9",
     "@whzcorcd/rop-client": "^1.1.6",
     "axios": "^0.20.0",
