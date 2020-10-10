@@ -78,17 +78,30 @@ export default {
   },
   data() {
     return {
-      config: {
-        points: [],
-        lines: []
-      }
+      inPoints: [],
+      inLines: [],
+      outPoints: [],
+      outLines: []
+      // config: {
+      //   points: [],
+      //   lines: []
+      // }
     };
   },
+  computed: {
+    config() {
+      return {
+        points: [...this.inPoints, ...this.outPoints],
+        lines: [...this.inLines, ...this.outLines]
+      };
+    }
+  },
   mounted() {
-    this.resetConfig();
+    this.resetIn();
+    this.resetOut();
   },
   methods: {
-    resetConfig() {
+    resetIn() {
       let points = [];
       let lines = [];
       for (let i = 0; i < this.inData.length; i++) {
@@ -122,6 +135,12 @@ export default {
           ...linesFluency
         });
       }
+      this.inPoints = points;
+      this.inLines = lines;
+    },
+    resetOut() {
+      let points = [];
+      let lines = [];
       for (let i = 0; i < this.outData.length; i++) {
         let item = this.outData[i];
         let len = this.outData.length;
@@ -153,18 +172,19 @@ export default {
           ...linesFluency
         });
       }
-      this.config = { points, lines };
+      this.outPoints = points;
+      this.outLines = lines;
     }
   },
   watch: {
     inData() {
       this.$nextTick(() => {
-        this.resetConfig();
+        this.resetIn();
       });
     },
     outData() {
       this.$nextTick(() => {
-        this.resetConfig();
+        this.resetOut();
       });
     }
   }

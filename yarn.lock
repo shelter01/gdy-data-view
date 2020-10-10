@@ -861,27 +861,12 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@gdyfe/data-view@^1.0.0":
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/@gdyfe/data-view/-/data-view-1.0.7.tgz#fd1990c54b7b4f98ca793138f3e188812ba7b309"
-  integrity sha512-d1Rwvu2XAUXgXIwLzg4Z+GPBKrEX/CaVkx/bWy09mvmQIt6GomCHa1a8F9ybhvnnYEXPkgNYy/3kSkFwanOkJQ==
-  dependencies:
-    "@gdyfe/data-view" "^1.0.0"
-    "@jiaminghi/data-view" "^2.9.9"
-    "@whzcorcd/rop-client" "^1.1.6"
-    axios "^0.20.0"
-    core-js "^3.6.5"
-    screenfull "^5.0.2"
-    swiper "^6.3.1"
-    vue "^2.6.11"
-    vue-awesome-swiper "^4.1.1"
-
 "@gdyfe/data-view@^1.0.8":
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/@gdyfe/data-view/-/data-view-1.0.8.tgz#7e7ae6b50f8d12a29a01ff5f1d57ce91e588ea47"
-  integrity sha512-IMIheZMfVoHrVABVUgkpByBh7b4UITqvAh8PujCcjJoxqjNfVenjG9bibN+/fm9r21PREdJtZBeSAUhMNh73vQ==
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/@gdyfe/data-view/-/data-view-1.0.11.tgz#5668e455fecb5cc9ac89d369d73836f14ea1db25"
+  integrity sha512-j0xwXWGCFhHkoGUjqWiWS+2gL+toOP6TzJW+4pYptScdgosGLdNdsTuuIyO23x8FbD1PpifOmEhg6e3/Bs+48g==
   dependencies:
-    "@gdyfe/data-view" "^1.0.0"
+    "@gdyfe/data-view" "^1.0.8"
     "@jiaminghi/data-view" "^2.9.9"
     "@whzcorcd/rop-client" "^1.1.6"
     axios "^0.20.0"

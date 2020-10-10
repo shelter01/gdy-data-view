@@ -43,6 +43,7 @@ export default {
   },
   data() {
     return {
+      timers: {},
       ROP_rc: null,
       workList: [],
       swiperOptions: {
@@ -112,8 +113,22 @@ export default {
       });
     },
     setNodeData(data) {
-      if (this.$refs[data.instanceId] && this.$refs[data.instanceId][0]) {
-        this.$refs[data.instanceId][0].resetData(data);
+      let instanceId = data.instanceId;
+      if (this.$refs[instanceId] && this.$refs[instanceId][0]) {
+        if (!this.timers[instanceId]) {
+          this.timers[instanceId] = {
+            timer: null,
+            data: {}
+          };
+        }
+        this.timers[instanceId].data = data || {};
+        if (!this.timers[instanceId].timer) {
+          this.timers[instanceId].timer = setTimeout(() => {
+            this.$refs[instanceId][0].resetData(this.timers[instanceId].data);
+            clearInterval(this.timers[instanceId].timer);
+            this.timers[instanceId].timer = null;
+          }, 3000);
+        }
       }
     }
   },

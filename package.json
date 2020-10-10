@@ -1,6 +1,6 @@
 {
   "name": "@gdyfe/data-view",
-  "version": "1.0.8",
+  "version": "1.0.11",
   "main": "lib/index.js",
   "author": "xiaolanchong <1006903445@qq.com>",
   "description": "中传数据大屏",
