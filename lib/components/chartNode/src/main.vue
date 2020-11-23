@@ -10,7 +10,9 @@
       <div class="gdy-chart-node--base">
         <img class="gdy-chart-node--base-img" src="./img/base.png" alt="" />
         <div class="gdy-chart-node--base-in">in</div>
-        <div class="gdy-chart-node--base-name">{{ lcpsInfo.name || 'lcps' }}</div>
+        <div class="gdy-chart-node--base-name">
+          {{ lcpsInfo.name || 'lcps' }}
+        </div>
         <div class="gdy-chart-node--base-out">out</div>
       </div>
       <div class="gdy-chart-node--count">
@@ -24,35 +26,38 @@
         </div>
       </div>
     </div>
-    <dv-flyline-chart-enhanced :config="config" style="width:100%;height:100%;" />
+    <dv-flyline-chart-enhanced
+      :config="config"
+      style="width:100%;height:100%;"
+    />
   </dv-full-screen-container>
 </template>
 
 <script>
-import Vue from 'vue';
-import { fullScreenContainer, flylineChartEnhanced } from '@jiaminghi/data-view';
-Vue.use(fullScreenContainer);
-Vue.use(flylineChartEnhanced);
-import CHART_CONFIG from './config.js';
+import Vue from 'vue'
+import { fullScreenContainer, flylineChartEnhanced } from '@jiaminghi/data-view'
+Vue.use(fullScreenContainer)
+Vue.use(flylineChartEnhanced)
+import CHART_CONFIG from './config.js'
 export default {
   name: 'gdyChartNode',
   props: {
     title: {
       type: String,
       default() {
-        return '全链路监看';
+        return '全链路监看'
       }
     },
     inData: {
       type: Array,
       default() {
-        return [];
+        return []
       }
     },
     outData: {
       type: Array,
       default() {
-        return [];
+        return []
       }
     },
     lcpsInfo: {
@@ -60,19 +65,19 @@ export default {
       default() {
         return {
           name: 'lcps'
-        };
+        }
       }
     },
     countNode: {
       type: Number,
       default() {
-        return 0;
+        return 0
       }
     },
     errorNode: {
       type: Number,
       default() {
-        return 0;
+        return 0
       }
     }
   },
@@ -86,36 +91,36 @@ export default {
       //   points: [],
       //   lines: []
       // }
-    };
+    }
   },
   computed: {
     config() {
       return {
         points: [...this.inPoints, ...this.outPoints],
         lines: [...this.inLines, ...this.outLines]
-      };
+      }
     }
   },
   mounted() {
-    this.resetIn();
-    this.resetOut();
+    this.resetIn()
+    this.resetOut()
   },
   methods: {
     resetIn() {
-      let points = [];
-      let lines = [];
+      let points = []
+      let lines = []
       for (let i = 0; i < this.inData.length; i++) {
-        let item = this.inData[i];
-        let len = this.inData.length;
-        let startY = 0.55 + (0.8 / len) * (i - (len - 1) / 2);
-        let endY = 0.55 + (0.1 / len) * (i - (len - 1) / 2);
-        let pointsFluency = CHART_CONFIG.pointsInFluency(len);
-        let pointsEndFluency = CHART_CONFIG.pointsEndFluency(len);
-        let linesFluency = CHART_CONFIG.linesFluency;
+        let item = this.inData[i]
+        let len = this.inData.length
+        let startY = 0.55 + (0.8 / len) * (i - (len - 1) / 2)
+        let endY = 0.55 + (0.1 / len) * (i - (len - 1) / 2)
+        let pointsFluency = CHART_CONFIG.pointsInFluency(len)
+        let pointsEndFluency = CHART_CONFIG.pointsEndFluency(len)
+        let linesFluency = CHART_CONFIG.linesFluency
         if (!item.fluency || item.fluency <= 85) {
-          pointsFluency = CHART_CONFIG.pointsInDisfluency(len);
-          pointsEndFluency = CHART_CONFIG.pointsEndDisfluency(len);
-          linesFluency = CHART_CONFIG.linesDisfluency;
+          pointsFluency = CHART_CONFIG.pointsInDisfluency(len)
+          pointsEndFluency = CHART_CONFIG.pointsEndDisfluency(len)
+          linesFluency = CHART_CONFIG.linesDisfluency
         }
         points.push(
           {
@@ -128,31 +133,31 @@ export default {
             coordinate: [0.35, endY],
             ...pointsEndFluency
           }
-        );
+        )
         lines.push({
           source: `${i + 1}、${item.name || '信源' + i + 1}`,
           target: `${i + 1}、${item.name || '信源' + i + 1}-end`,
           ...linesFluency
-        });
+        })
       }
-      this.inPoints = points;
-      this.inLines = lines;
+      this.inPoints = points
+      this.inLines = lines
     },
     resetOut() {
-      let points = [];
-      let lines = [];
+      let points = []
+      let lines = []
       for (let i = 0; i < this.outData.length; i++) {
-        let item = this.outData[i];
-        let len = this.outData.length;
-        let startY = 0.55 + (0.1 / len) * (i - (len - 1) / 2);
-        let endY = 0.55 + (0.8 / len) * (i - (len - 1) / 2);
-        let pointsFluency = CHART_CONFIG.pointsEndFluency(len);
-        let pointsEndFluency = CHART_CONFIG.pointsOutFluency(len);
-        let linesFluency = CHART_CONFIG.linesFluency;
+        let item = this.outData[i]
+        let len = this.outData.length
+        let startY = 0.55 + (0.1 / len) * (i - (len - 1) / 2)
+        let endY = 0.55 + (0.8 / len) * (i - (len - 1) / 2)
+        let pointsFluency = CHART_CONFIG.pointsEndFluency(len)
+        let pointsEndFluency = CHART_CONFIG.pointsOutFluency(len)
+        let linesFluency = CHART_CONFIG.linesFluency
         if (!item.fluency || item.fluency <= 85) {
-          pointsFluency = CHART_CONFIG.pointsEndDisfluency(len);
-          pointsEndFluency = CHART_CONFIG.pointsOutDisfluency(len);
-          linesFluency = CHART_CONFIG.linesDisfluency;
+          pointsFluency = CHART_CONFIG.pointsEndDisfluency(len)
+          pointsEndFluency = CHART_CONFIG.pointsOutDisfluency(len)
+          linesFluency = CHART_CONFIG.linesDisfluency
         }
         points.push(
           {
@@ -165,30 +170,30 @@ export default {
             coordinate: [0.8, endY],
             ...pointsEndFluency
           }
-        );
+        )
         lines.push({
           source: `${i + 1}、${item.name || '输出' + i + 1}-start`,
           target: `${i + 1}、${item.name || '输出' + i + 1}`,
           ...linesFluency
-        });
+        })
       }
-      this.outPoints = points;
-      this.outLines = lines;
+      // this.outPoints = points;
+      // this.outLines = lines;
     }
   },
   watch: {
     inData() {
       this.$nextTick(() => {
-        this.resetIn();
-      });
+        this.resetIn()
+      })
     },
     outData() {
       this.$nextTick(() => {
-        this.resetOut();
-      });
+        this.resetOut()
+      })
     }
   }
-};
+}
 </script>
 <style>
 @import url(./main.css);

@@ -10,10 +10,11 @@
 </template>
 
 <script>
-import Axios from 'axios';
-import Vue from 'vue';
-import chartNode from '../../chartNode';
-Vue.use(chartNode);
+// import Axios from 'axios'
+import Vue from 'vue'
+import chartNode from '../../chartNode'
+Vue.use(chartNode)
+import { FullLinkService } from '../../../service'
 
 export default {
   name: 'gdyRouteMonitorItem',
@@ -38,48 +39,61 @@ export default {
       ],
       countNode: 0,
       errorNode: 0
-    };
+    }
   },
   mounted() {
-    this.getInfo();
+    this.getInfo()
   },
   methods: {
     getInfo() {
-      const curl = this.url_route;
-      Axios.get(curl, { params: { instanceId: this.instanceId } }).then(res => {
-        if (res.data && res.data.Flag === 100) {
-          const data = res.data.list || {};
-          this.resetData(data);
-        }
-      });
+      // const curl = this.url_route
+      // Axios.get(curl, { params: { instanceId: this.instanceId } }).then(res => {
+      //   if (res.data && res.data.Flag === 100) {
+      //     const data = res.data.list || {}
+      //     this.resetData(data)
+      //   }
+      // })
+      FullLinkService.getFullLinkList(this.url_route, {
+        params: { instanceId: this.instanceId }
+      }).then(res => {
+        this.inData = res.inData
+        this.outData = res.outData
+        this.countNode = res.countNode
+        this.errorNode = res.errorNode
+      })
     },
-    resetData(data) {
-      const { num = 0, abnormalNum = 0, in: inList = {}, out: outList = {} } = data;
-      const inData = [];
-      const outData = [];
-      for (const key in inList) {
-        if (inList[key]) {
-          inData.push({
-            name: key,
-            fluency: inList[key]['fluency']
-          });
-        }
-      }
-      for (const key in outList) {
-        if (outList[key]) {
-          outData.push({
-            name: key,
-            fluency: outList[key]['fluency']
-          });
-        }
-      }
-      this.inData = inData;
-      this.outData = outData;
-      this.countNode = num;
-      this.errorNode = abnormalNum;
-    }
+    // resetData(data) {
+    //   const {
+    //     num = 0,
+    //     abnormalNum = 0,
+    //     in: inList = {},
+    //     out: outList = {}
+    //   } = data
+    //   const inData = []
+    //   const outData = []
+    //   for (const key in inList) {
+    //     if (inList[key]) {
+    //       inData.push({
+    //         name: key,
+    //         fluency: inList[key]['fluency']
+    //       })
+    //     }
+    //   }
+    //   for (const key in outList) {
+    //     if (outList[key]) {
+    //       outData.push({
+    //         name: key,
+    //         fluency: outList[key]['fluency']
+    //       })
+    //     }
+    //   }
+    //   this.inData = inData
+    //   this.outData = outData
+    //   this.countNode = num
+    //   this.errorNode = abnormalNum
+    // }
   }
-};
+}
 </script>
 <style>
 .chart-box {
